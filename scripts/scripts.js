@@ -82,6 +82,13 @@ async function loadEager(doc) {
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }
+  const script = document.createElement('script');
+  script.src = 'https://vjs.zencdn.net/7.20.3/video.min.js';
+  document.head.appendChild(script);
+  const css = document.createElement('link');
+    css.setAttribute('href', 'https://vjs.zencdn.net/7.15.4/video-js.css');
+    css.setAttribute('rel', 'stylesheet');
+    document.head.appendChild(css);
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
