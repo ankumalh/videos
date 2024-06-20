@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <!-- we’re not reusing common.js, as it will load aem.js -->
+    <!-- aem.js will in turn break fgrep.js -->
+    <script src="/tools/sidekick/tools-config.js" type="module"></script>
+    <link rel="preload" href="/constants.json" as="fetch" type="application/json" crossorigin="anonymous"/>
+    <title>fgrep</title>
+    <script type="module" src="/tools/fgrep-attr/fgrep.js"></script>
+    <link rel="stylesheet" href="/tools/fgrep-attr/fgrep.css"/>
+  </head>
+  <body>
+    <div id="controls">
+      <input id="input" type="text" placeholder="class=&quot;card">
+      <button id="run">run</button>
+      <button id="export">export</button>
+      <a id="export-link"></a>
+    </div>
+    <pre>
+    <div id="status"></div>
+    <div id="results"></div>
+    </pre>
+  </body>
+</html>

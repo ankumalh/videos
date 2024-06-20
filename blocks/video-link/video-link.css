@@ -1,0 +1,28 @@
+.block.video-link a.text-link-with-video {
+  display: inline-flex;
+  align-items: center;
+  color: var(--volvo-text-gray);
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  padding: 5px;
+  font-family: var(--ff-volvo-novum);
+  font-size: 16px;
+}
+
+.block.video-link a.text-link-with-video:hover {
+  color: #030304;
+  background: transparent;
+}
+
+.block.video-link i {
+  font-size: 48px;
+}
+
+.block.video-link a.text-link-with-video::after {
+  content: unset;
+}
+
+.block.video-link {
+  text-align: center;
+}

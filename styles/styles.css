@@ -1,80 +1,384 @@
+/* stylelint-disable string-quotes */
+/* stylelint-disable number-max-precision */
+
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
-:root {
-  /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
-  --dark-color: #ccc;
-  --text-color: black;
-
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
-
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
-
-  /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
-
-  /* nav height */
-  --nav-height: 64px;
+   Fonts
+   When using fonts, please see "best practices for fonts" in Readme
+*/
+@font-face {
+  font-family: 'VolvoNovum Fallback';
+  src: local('arial');
+  size-adjust: 102%;
+  ascent-override: 95%;
+  descent-override: normal;
+  line-gap-override: normal;
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 100.06%;
-  ascent-override: 95%;
-  src: local('Arial');
+  font-family: 'VolvoNovum-Medium Fallback';
+  src: local('arial');
+  size-adjust: 103%;
+  ascent-override: 92%;
+  descent-override: normal;
+  line-gap-override: normal;
 }
 
-@media (width >= 900px) {
-  :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
-  }
+@font-face {
+  font-family: 'VolvoBroadProDigital Fallback';
+  src: local('Arial Narrow');
+  font-style: normal;
+  font-weight: 400;
+  ascent-override: 100%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 84%;
+}
+
+@font-face {
+  font-family: 'fontawesome Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 93.75%;
+  descent-override: 6.25%;
+  line-gap-override: 0%;
+  size-adjust: 100%;
+}
+
+:root {
+  /* fonts */
+  --ff-volvo-novum-medium: 'VolvoNovum-Medium', 'VolvoNovum-Medium Fallback', sans-serif;
+  --ff-volvo-novum: 'VolvoNovum', 'VolvoNovum Fallback', sans-serif;
+  --ff-volvo-broadprodigital: 'VolvoBroadProDigital', 'VolvoBroadProDigital Fallback', sans-serif;
+  --ff-fontawesome: 'fontawesome', 'fontawesome Fallback';
+  --font-family-body: var(--ff-volvo-novum);
+  --font-family-heading: var(--ff-volvo-novum-medium);
+  --font-family-fixed: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+
+  /* REDESIGN */
+
+  /* Sizings */
+  --border-radius: 8px;
+  --section-padding: 40px 0;
+  --section-div-padding: 24px 16px;
+  --carousel-gap: 8px;
+
+  /* Form styles */
+  --input-padding: 16px;
+
+  /* Volvo Broad Pro Digital, 70px / 4.375rem, 5px / 0.313rem, 85% */
+  --f-statement-header-font-size: 4.375rem; /* 70px */
+  --f-statement-header-letter-spacing: 0.313rem;
+  --f-statement-header-line-height: 85%;
+
+  /* Volvo Novum, 72px / 4.5rem, Medium, -1.15px / 0.072rem, 100% */
+  --f-heading-1-font-size: 4.5rem; /* 72px */
+  --f-heading-1-letter-spacing: 0.072rem;
+  --f-heading-1-line-height: 100%;
+
+  /* Volvo Novum, 56px / 3.5rem, Light, -0.5px / 0.031rem, 110% */
+  --f-heading-2-font-size: 3.5rem; /* 56px */
+  --f-heading-2-letter-spacing: 0.03125rem;
+  --f-heading-2-line-height: 110%;
+
+  /* Volvo Novum, 48px / 3rem, Medium, 0px, 110% */
+  --f-heading-3-font-size: 3rem; /* 48px */
+  --f-heading-3-letter-spacing: 0;
+  --f-heading-3-line-height: 110%;
+
+  /* Section Header/Heading 3.5 */
+  --f-heading-3-5-font-size: 2rem;
+  --f-heading-3-5-letter-spacing: 0;
+  --f-heading-3-5-line-height: 125%;
+
+  /* Volvo Novum Web Latin, 32px / 2rem, Medium, 0.25px / 0.016rem, 125% */
+  --f-heading-4-font-size: 2rem; /* 32px */
+  --f-heading-4-letter-spacing: 0.015625rem;
+  --f-heading-4-line-height: 125%;
+
+  /* Volvo Novum, 24px / 1.5rem, Light, 0px, 125% */
+  --f-heading-5-font-size: 1.5rem; /* 24px */
+  --f-heading-5-letter-spacing: 0;
+  --f-heading-5-line-height: 125%;
+
+  /* Volvo Novum, 20px / 1.25rem, Medium, 0.15px / 0.009rem, 125% */
+  --f-heading-6-font-size: 1.25rem; /* 20px */
+  --f-heading-6-letter-spacing: 0.009375rem;
+  --f-heading-6-line-height: 125%;
+
+  /* Volvo Novum, 16px / 1rem, Medium, 0.15px / 0.009rem, 130% */
+  --f-subtitle-1-font-size: 1rem; /* 16px */
+  --f-subtitle-1-letter-spacing: 0.009375rem;
+  --f-subtitle-1-line-height: 130%;
+
+  /* Volvo Novum, 14px / 0.875rem, Medium, 0.15px / 0.009rem, 130% */
+  --f-subtitle-2-font-size: 0.875rem; /* 14px */
+  --f-subtitle-2-letter-spacing: 0.009375rem;
+  --f-subtitle-2-line-height: 130%;
+
+  /* Volvo Novum, 16px / 1rem, Regular, 0.5px / 0.031rem, 130% */
+  --f-body-font-size: 1rem; /* 16px */
+  --f-body-letter-spacing: 0.03125rem;
+  --f-body-line-height: 130%;
+
+  /* Volvo Novum, 18px / 1.125rem, Regular, 0.5px / 0.03125rem, 144% */
+  --f-body-2-font-size: 1.125rem; /* 18px */
+  --f-body-2-letter-spacing: 0.03125rem; /* 5px */
+  --f-body-2-line-height: 144%;
+
+  /* Volvo Novum, 14px / 0.875rem, Regular, 1.25px / 0.078rem, 130% */
+  --f-button-font-size: 0.875rem; /* 14px */
+  --f-button-letter-spacing: 0.078125rem;
+  --f-button-line-height: 130%;
+
+  /* Volvo Novum, 14px / 0.875rem, Regular, 0.4px / 0.025rem, 125% */
+  --f-overline-font-size: 0.875rem; /* 14px */
+  --f-overline-letter-spacing: 0.025rem;
+  --f-overline-line-height: 125%;
+
+  /* Volvo Novum, 12px / 0.75rem, Regular, 0.4px / 0.025rem, 125% */
+  --f-caption-font-size: 0.75rem; /* 12px */
+  --f-caption-letter-spacing: 0.025rem;
+  --f-caption-line-height: 125%;
+
+  /* COLORS */
+  --c-black: #000;
+  --c-white: #fff;
+  --c-volvo-blue: #182871;
+  --c-dark-blue: #202a44;
+  --c-leaf-1: #c8e691;
+  --c-leaf-2: #a8d46b;
+  --c-leaf-3: #8fc54e;
+  --c-leaf-4: #78b833;
+  --c-teal-1: #b8ded8;
+  --c-teal-2: #8dc9bf;
+  --c-teal-3: #66b3a6;
+  --c-teal-4: #50a294;
+  --c-flow-1: #c3d2d6;
+  --c-flow-2: #96b0b6;
+  --c-flow-3: #678c96;
+  --c-flow-4: #396976;
+  --c-cta-blue-default: #004fbc;
+  --c-cta-blue-hover: #2b8ede;
+  --c-cta-blue-active: #104e9b;
+  --c-cta-blue-visited: #346559;
+
+  /* Greyscale */
+  --c-grey-50: #f7f7f7;
+  --c-grey-100: #ededed;
+  --c-grey-200: #e1e1e1;
+  --c-grey-300: #d0d0d0;
+  --c-grey-400: #a9a9a9;
+  --c-grey-500: #8d8d8d;
+  --c-grey-600: #6e6e6e;
+  --c-grey-700: #575757;
+  --c-grey-800: #424242;
+  --c-grey-900: #323232;
+  --c-grey-950: #212121;
+  --c-main-black: #141414;
+
+  /* Success / error colors */
+  --c-error-red: #bf2012;
+  --c-error-background-red: #f8ddd8;
+  --c-success-green: #1a6c31;
+  --c-warning-yellow: #ffa000;
+
+  /* Global colors */
+  --background-color: var(--c-white);
+  --border-subtle: var(--c-grey-200);
+  --border-strong: var(--c-grey-400);
+  --border-hover: var(--c-cta-blue-hover);
+  --border-active: var(--c-cta-blue-active);
+  --border-focus: var(--c-cta-blue-hover);
+  --navigation-line-active-color: var(--c-main-black);
+
+  /* Motions */
+  --duration-small: 160ms;
+  --duration-medium: 240ms;
+  --duration-large: 320ms;
+  --easing-entrance: cubic-bezier(0, 0, 0.4, 1);
+  --easing-exit: cubic-bezier(0.2, 0, 1, 1);
+  --easing-standard: cubic-bezier(0.2, 0, 0.1, 1);
+
+  /* Global video */
+  --video-aspect-ratio: 16/9;
+
+  /*
+    OLD styles
+    we need to remove / update once they are not used in the styles
+  */
+
+  /* Global colors */
+  --button-primary-color: var(--text-color);
+  --button-primary-bg: var(--c-white);
+  --volvo-text-gray: var(--c-grey-4);
+  --volvo-text-light-gray: var(--c-grey-2);
+  --text-color: var(--c-grey-4);
+  --btn-background-hover: var(--c-grey-1);
+  --input-background-color: var(--c-grey-1);
+  --overlay-background-color: var(--c-grey-1);
+  --background-light-gray: #ebebeb;
+  --highlight-background-color: #ccc;
+  --btn-border-hover: #030333;
+
+  /* Greyscale */
+  --c-grey-1: #e1dfdd;
+  --c-grey-2: #a7a8a9;
+  --c-grey-3: #888b8d;
+  --c-grey-4: #53565a;
+
+  /* buttons */
+  --btn-padding: 12px 32px;
+
+  /* body sizes */
+  --body-font-size-l: 2.4rem;
+  --body-font-size-m: 2.2rem;
+  --body-font-size-s: 1.8rem;
+  --body-font-size-xs: 1.6rem;
+  --body-font-size-xxs: 1.3rem;
+
+  /* heading sizes */
+
+  /* the scale allows us to adjust all heading sizes but preserve the ratio */
+  --heading-font-size-scale: 0.5;
+  --heading-font-size-xxl: calc(7.2rem * var(--heading-font-size-scale));
+  --heading-font-size-xl: calc(5.6rem * var(--heading-font-size-scale));
+  --heading-font-size-l: calc(4.8rem * var(--heading-font-size-scale));
+  --heading-font-size-ml: calc(3.2rem * var(--heading-font-size-scale));
+  --heading-font-size-m: calc(2.4rem * var(--heading-font-size-scale));
+  --heading-font-size-s: calc(2rem * var(--heading-font-size-scale));
+  --heading-font-size-xs: calc(1.8rem * var(--heading-font-size-scale));
+
+  /*
+    NEW heading sizes (for redesign)
+    names in brackends refers to names on the desing
+   */
+
+  /* XXL (Section header/Heading 1) */
+  --heading-xxl-font-size: 7.2rem;
+  --heading-xxl-line-height: 1;
+  --heading-xxl-letter-spacing: -1.15px;
+
+  /* XL (Section header/Heading 2) */
+  --heading-xl-font-size: 5.6rem;
+  --heading-xl-line-height: 1.1;
+  --heading-xl-letter-spacing: -0.5px;
+
+  /* L (Section header/Heading 3) */
+  --heading-l-font-size: 4.8rem;
+  --heading-l-line-height: 1.1;
+  --heading-l-letter-spacing: 0;
+
+  /* ML (Section header/Heading 4) */
+  --heading-ml-font-size: 3.2rem;
+  --heading-ml-line-height: 1.25;
+  --heading-ml-letter-spacing: 0.25px;
+
+  /* M (Section header/Heading 5) */
+  --heading-m-font-size: 2.4rem;
+  --heading-m-line-height: 1.25;
+  --heading-m-letter-spacing: normal;
+
+  /* S (Section header/Heading 6) */
+  --heading-s-font-size: 2rem;
+  --heading-s-line-height: 1.25;
+  --heading-s-letter-spacing: 0.15px;
+
+  /* Body regular */
+  --body-regular-font-size: 1.6rem;
+  --body-regular-line-height: 1.3;
+  --body-regular-letter-spacing: 0.5px;
+
+  /* nav height */
+  --nav-height: 52px;
+  --sub-nav-height: 44px;
+
+  /* section style */
+  --wrapper-width: 100%;
+
+  /* Zindex header */
+  --z-index-header: 1050;
+
+  /* In page navigation */
+  --inpage-navigation-height: 0;
+
+  /* Zindex inpage navigation */
+  --z-index-inpage-nav: 1049;
+  --z-index-inpage-nav-open: 1051;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+  font-size: 10px;
 }
 
 body {
-  font-size: var(--body-font-size-m);
-  margin: 0;
-  font-family: var(--body-font-family);
-  line-height: 1.6;
+  background-color: var(--c-white);
   color: var(--text-color);
-  background-color: var(--background-color);
   display: none;
+  font-family: var(--font-family-body);
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.appear {
-  display: block;
+  display: unset;
 }
 
 header {
-  height: var(--nav-height);
+  position: relative;
+  min-height: var(--nav-height);
+}
+
+.header {
+  background-color: white;
+  min-height: var(--nav-height);
+  z-index: var(--z-index-header);
+}
+
+header.sub-nav-wrapper {
+  min-height: calc(var(--nav-height) + var(--sub-nav-height));
+}
+
+header .sub-nav.block {
+  height: var(--sub-nav-height);
+  background-color: #7f7f7f;
+  z-index: 1020;
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: var(--nav-height);
+  bottom: unset;
+  transition: top 300ms ease-in-out;
+}
+
+.header--hidden ~ .sub-nav.block {
+  top: 0;
+}
+
+/* specific page styles */
+div:where([role="dialog"]).center,
+main.center {
+  text-align: center;
+}
+
+div:where([role="dialog"]).center :where(.block),
+main.center :where(.block) {
+  text-align: initial;
+}
+
+main.center :where(.block) {
+  text-align: initial;
 }
 
 h1,
@@ -83,20 +387,71 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  font-family: var(--font-family-heading);
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
   scroll-margin: calc(var(--nav-height) + 1em);
+  font-style: normal;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: -1.15px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  line-height: 1.1;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: 1.25;
+  letter-spacing: 0.25px;
+  margin-bottom: 8px;
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+  line-height: 1.25;
+  font-family: var(--ff-volvo-novum);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.25;
+  font-family: var(--ff-volvo-novum);
+}
+
+:is(h1, h2, h3, h4, h5, h6) > em {
+  color: var(--volvo-text-light-gray);
+  font-style: normal;
+}
+
+.block h4,
+.block h4 > em {
+  color: inherit;
+  text-transform: uppercase;
+  font-style: initial;
+}
+
+h1#press-releases,
+h1#social-feeds,
+:root:where(:not(.redesign-v2)) h1#volvo-trucks-magazine {
+  font-family: var(--ff-volvo-broadprodigital);
+  font-size: 60px;
+}
 
 p,
 dl,
@@ -105,16 +460,41 @@ ul,
 pre,
 blockquote {
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  font-size: var(--body-font-size-xs);
+}
+
+a:any-link {
+  color: var(--c-cta-blue-default);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--c-cta-blue-hover);
+}
+
+:is(h1, h2, h3, h4, h5, h6) a:any-link {
+  color: currentcolor;
+}
+
+:is(h1, h2, h3, h4, h5, h6) a:any-link:hover {
+  text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) a:any-link::after {
+  color: var(--c-cta-blue-default);
 }
 
 code,
-pre {
-  font-family: var(--fixed-font-family);
+pre,
+samp {
+  font-family: var(--font-family-fixed);
   font-size: var(--body-font-size-s);
 }
 
-code {
+code,
+samp {
   padding: 0.125em;
 }
 
@@ -122,105 +502,1345 @@ pre {
   overflow: scroll;
 }
 
+strong {
+  font-family: var(--ff-volvo-novum);
+}
+
+/* buttons */
+
+a.button:any-link,
+button {
+  font-family: var(--ff-volvo-novum-medium);
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:is(h1, h2, h3, h4, h5, h6) a:any-link::after,
+a.button::after {
+  content: ' \f105';
+  font-family: var(--ff-fontawesome);
+}
+
+a.button.primary,
+button.primary {
+  max-width: 100%;
+  display: inline-block;
+  padding: var(--btn-padding);
+  color: var(--button-primary-color);
+  background-color: var(--button-primary-bg);
+  border: 2px solid var(--text-color);
+}
+
+a.button.primary.dark {
+  --button-primary-color: var(--c-white);
+  --button-primary-bg: var(--text-color);
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: var(--overlay-background-color);
+  cursor: unset;
+}
+
+a.button.primary:hover,
+button.primary:hover {
+  background-color: var(--btn-background-hover);
+  border-color: var(--btn-border-hover);
+  color: var(--text-color);
+}
+
+/* stylelint-disable-next-line selector-list-comma-newline-after */
+input[type='text'], select, textarea {
+  display: block;
+  padding: 10px 40px 10px 15px;
+  border: none;
+  border-radius: 0;
+  background-color: var(--background-light-gray);
+  appearance: none;
+}
+
+/* commont elements */
+div:where([role="dialog"]) input,
+main input {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.6rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--c-white);
+}
+
+div:where([role="dialog"]) input:hover,
+main input:hover {
+  border: 1px solid var(--text-color);
+}
+
+div:where([role="dialog"]) pre,
 main pre {
-  background-color: var(--light-color);
+  background-color: var(--overlay-background-color);
   padding: 1em;
   border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
 
-/* links */
-a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
+div:where([role="dialog"]) blockquote,
+main blockquote {
+  font-style: italic;
+  margin: 3rem;
+  text-indent: -1rem;
+  hanging-punctuation: first;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
+div:where([role="dialog"]) blockquote p::before,
+main blockquote p::before {
+  content: '“';
+  line-height: 0;
 }
 
-/* buttons */
-a.button:any-link,
-button {
-  font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 30px;
+div:where([role="dialog"]) blockquote p::after,
+main blockquote p::after {
+  content: '”';
+  line-height: 0;
 }
 
-a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
 }
 
-button:disabled,
-button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
-}
-
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
-}
-
+div:where([role="dialog"]) img,
 main img {
   max-width: 100%;
-  width: auto;
   height: auto;
+  vertical-align: middle;
 }
 
-.icon {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
+div:where([role="dialog"]) p img,
+main p img {
+  display: block;
+  margin: auto;
 }
 
-.icon img {
-  height: 100%;
-  width: 100%;
+.redesign-v2 p {
+  font-size: var(--f-body-font-size);
+  line-height: var(--f-body-line-height);
+  letter-spacing: var(--f-body-letter-spacing);
+}
+
+.redesign-v2 a.button:focus,
+.redesign-v2 button:focus {
+  outline: 0;
+}
+
+.redesign-v2 a.button:focus-visible,
+.redesign-v2 button:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
 }
 
 /* sections */
-main .section {
-  padding: 64px 16px;
+
+div:where([role="dialog"]) .section > div,
+main .section > div {
+  width: var(--wrapper-width);
+  padding: 0 16px;
+  margin: 48px auto;
 }
 
-@media (width >= 600px) {
-  main .section {
-    padding: 64px 32px;
+div:where([role="dialog"]) .section-with-background,
+main .section-with-background {
+  --text-color: white;
+
+  box-sizing: border-box;
+  position: relative;
+  min-height: 405px;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  padding: 48px 0;
+}
+
+div:where([role="dialog"]) .section-with-background > div:first-of-type,
+main .section-with-background > div:first-of-type,
+div:where([role="dialog"]) .section-with-background > div:first-of-type > :first-child,
+main .section-with-background > div:first-of-type > :first-child {
+  margin-top: 0;
+}
+
+div:where([role="dialog"]) .section-with-background > div:last-of-type,
+main .section-with-background > div:last-of-type,
+div:where([role="dialog"]) .section-with-background > div:last-of-type > :last-child,
+main .section-with-background > div:last-of-type > :last-child {
+  margin-bottom: 0;
+}
+
+div:where([role="dialog"]) .section-with-background > picture:last-of-type img,
+main .section-with-background > picture:last-of-type img {
+  width: var(--wrapper-width);
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  object-fit: cover;
+}
+
+div:where([role="dialog"]) .section:first-child > :first-child,
+main .section:first-child > :first-child {
+  margin-top: 0;
+}
+
+/* progressive section appearance */
+div:where([role="dialog"]) .section[data-section-status='loading'],
+main .section[data-section-status='loading'],
+div:where([role="dialog"]) .section[data-section-status='initialized'],
+main .section[data-section-status='initialized'] {
+  display: none;
+}
+
+div:where([role="dialog"]) .section.highlight,
+main .section.highlight {
+  background-color: var(--highlight-background-color);
+}
+
+body.disable-scroll,
+body.disable-scroll main {
+  overflow: hidden;
+}
+
+body.disable-body-scroll {
+  scroll-behavior: auto;
+  overflow: hidden;
+}
+
+ul.cta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.cta-list li {
+  padding: 0 50px;
+}
+
+.pager .pagination ol li:not(:first-child) {
+  float: right;
+  padding: 10px;
+  margin-top: -10px;
+}
+
+div:where([role="dialog"]) .section.tabbed-container-full-width > div,
+main .section.tabbed-container-full-width > div {
+  padding: 0;
+  width: unset;
+}
+
+div:where([role="dialog"]) .section.tabbed-container-full-width,
+main .section.tabbed-container-full-width {
+  --horizontal-padding: calc((100% - var(--wrapper-width)) / 2);
+}
+
+div:where([role="dialog"]) .section.tabbed-container ul.tab-navigation,
+main .section.tabbed-container ul.tab-navigation {
+  padding: 0;
+  margin: 25px;
+  text-align: center;
+}
+
+div:where([role="dialog"]) .section.tabbed-container ul.tab-navigation li,
+main .section.tabbed-container ul.tab-navigation li {
+  margin: 0 auto;
+  padding: 0 1% 8px;
+  display: block;
+  width: 35%;
+}
+
+div:where([role="dialog"]) .section.tabbed-container ul.tab-navigation button,
+main .section.tabbed-container ul.tab-navigation button {
+  background: 0 0;
+  border: none;
+  color: var(--volvo-text-gray);
+  padding: 0;
+  margin: 0;
+}
+
+.section.tabbed-container ul.tab-navigation li.active,
+.section.tabbed-container ul.tab-navigation li:hover {
+  border-bottom: 3px solid var(--c-cta-blue-default);
+}
+
+.redesign-v2 .icon {
+  display: flex;
+}
+
+.redesign-v2 .icon svg {
+  fill: currentcolor;
+  height: 1em;
+  width: 1em;
+}
+
+/* image as video link */
+.link-with-video {
+  position: relative;
+  display: block;
+}
+
+a.button.text-link-with-video {
+  display: inline-flex;
+  align-items: center;
+  color: var(--volvo-text-gray);
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  padding: 5px;
+}
+
+.icon-play-video {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 48px;
+  height: 48px;
+}
+
+.link-with-video .icon-play-video svg,
+.redesign-v2 .link-with-video .icon-play-video svg {
+  width: 48px;
+  height: 48px;
+}
+
+a.button.text-link-with-video:hover {
+  color: #030304;
+  background: transparent;
+}
+
+a.button.text-link-with-video i {
+  font-size: 48px;
+}
+
+a.button.text-link-with-video::after {
+  content: unset;
+}
+
+/* video low resolution banner */
+.low-resolution-banner {
+  font-size: 16px;
+  background: var(--c-white);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.low-resolution-banner-cookie-settings {
+  border: none;
+  background: transparent;
+  color: var(--c-dark-blue);
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--ff-volvo-novum);
+}
+
+.low-resolution-banner button.modal-close-button {
+  padding-left: 20px;
+  color: var(--volvo-text-light-gray);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.redesign-v2 .low-resolution-banner {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: var(--c-grey-4);
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: var(--c-white);
+}
+
+.redesign-v2 .low-resolution-banner p {
+  margin: 0;
+}
+
+.redesign-v2 .low-resolution-banner .button.secondary {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .redesign-v2 .low-resolution-banner {
+    padding: 16px 32px;
   }
 }
 
-@media (width >= 900px) {
-  .section > div {
-    max-width: 1200px;
+/* pagination */
+.pager .pagination ol li .last::before {
+  font-family: var(--ff-fontawesome);
+  content: '\f051';
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.pager .pagination ol li .first::before {
+  font-family: var(--ff-fontawesome);
+  content: '\f048';
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.pager .pagination ol li .next::before {
+  font-family: var(--ff-fontawesome);
+  content: '\f054';
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.pager .pagination ol li .prev::before {
+  font-family: var(--ff-fontawesome);
+  content: '\f053';
+  font-size: 12px;
+  text-decoration: none;
+}
+
+div.block div.pager {
+  font-size: 1.4rem;
+  display: grid;
+  margin-bottom: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+div.block div.pager .pagination {
+  justify-self: end;
+}
+
+div.block div.pager .pagination .scroll {
+  padding: 0;
+  margin: 0 0 0 15px;
+  display: inline-flex;
+  gap: 5px;
+  list-style: none;
+}
+
+div.block div.pager .pagination .scroll li a {
+  color: var(--volvo-text-gray);
+  font-family: var(--ff-volvo-novum-medium);
+}
+
+@media screen and (min-width: 480px) {
+  div:where([role="dialog"]) .section.tabbed-container ul.tab-navigation li,
+  main .section.tabbed-container ul.tab-navigation li {
+    margin: 0 3%;
+    display: inline-block;
+    width: unset;
+  }
+}
+
+@media (min-width: 768px) {
+  ul.cta-list {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --sub-nav-height: 48px;
+  }
+
+  :root:not(.redesign-v2) div:where([role="dialog"]):not(.remove-top-margin) .section:first-child > :first-child,
+  :root:not(.redesign-v2) main:not(.remove-top-margin) .section:first-child > :first-child {
+    margin-top: 30px;
+  }
+
+  header .sub-nav.block {
+    background-color: var(--c-grey-4);
+  }
+}
+
+div:where([role="dialog"]).blue-contract .section,
+main.blue-contract .section {
+  padding: 40px 0;
+}
+
+div:where([role="dialog"]).blue-contract .section > div,
+main.blue-contract .section > div {
+  padding: 0 16px;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  div:where([role="dialog"]).blue-contract .section,
+  main.blue-contract .section {
+    padding: 80px 0;
+  }
+
+  div:where([role="dialog"]).blue-contract .section > div,
+  main.blue-contract .section > div {
+    padding: 0 32px;
     margin: auto;
   }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
+@media screen and (min-width: 1024px) {
+  div:where([role="dialog"]).blue-contract .section > div,
+  main.blue-contract .section > div {
+    padding: 0 135px;
+  }
 }
+
+@media (min-width: 1300px) {
+  :root:not(html.redesign-v2) {
+    --wrapper-width: 1200px;
+  }
+}
+
+/* Sections variant styling */
+@media (min-width: 1440px) {
+  :root:not(html.redesign-v2) div:where([role="dialog"]).blue-contract,
+  :root:not(html.redesign-v2) main.blue-contract {
+    --wrapper-width: 1440px;
+  }
+}
+
+div:where([role="dialog"]).blue-contract .section.section-with-title h1,
+main.blue-contract .section.section-with-title h1,
+div:where([role="dialog"]).blue-contract .section.section-with-title h2,
+main.blue-contract .section.section-with-title h2 {
+  font-size: var(--heading-ml-font-size);
+  line-height: var(--heading-ml-line-height);
+  letter-spacing: var(--heading-ml-letter-spacing);
+  margin: 0 0 16px;
+}
+
+div:where([role="dialog"]).blue-contract .section.section-with-title p,
+main.blue-contract .section.section-with-title p {
+  font-size: var(--body-regular-font-size);
+  line-height: var(--body-regular-line-height);
+  letter-spacing: var(--body-regular-letter-spacing);
+  margin: 0 0 16px;
+}
+
+@media screen and (min-width: 768px) {
+  div:where([role="dialog"]).blue-contract .section.section-with-title h1,
+  main.blue-contract .section.section-with-title h1,
+  div:where([role="dialog"]).blue-contract .section.section-with-title h2,
+  main.blue-contract .section.section-with-title h2 {
+    font-size: var(--heading-l-font-size);
+    line-height: var(--heading-l-line-height);
+    letter-spacing: var(--heading-l-letter-spacing);
+  }
+
+  div:where([role="dialog"]).blue-contract .section.section-with-title p,
+  main.blue-contract .section.section-with-title p {
+    font-size: var(--heading-m-font-size);
+    line-height: var(--heading-m-line-height);
+    letter-spacing: var(--heading-m-letter-spacing);
+  }
+
+  div:where([role="dialog"]).blue-contract .section.section-with-title > p:last-of-type,
+  main.blue-contract .section.section-with-title > p:last-of-type {
+    margin: 0 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div:where([role="dialog"]).blue-contract .section.section-with-title h1,
+  main.blue-contract .section.section-with-title h1,
+  div:where([role="dialog"]).blue-contract .section.section-with-title h2,
+  main.blue-contract .section.section-with-title h2 {
+    font-size: var(--heading-xxl-font-size);
+    line-height: var(--heading-xxl-line-height);
+    letter-spacing: var(--heading-xxl-letter-spacing);
+  }
+
+  div:where([role="dialog"]).blue-contract .section.section-with-title > p:last-of-type,
+  main.blue-contract .section.section-with-title > p:last-of-type {
+    margin: 0 0 80px;
+  }
+}
+
+/* REDESIGN GLOBAL STYLES */
+.redesign-v2 {
+  --media-background: var(--c-grey-100);
+  --card-background: #f7f7f7;
+  --card-text: var(--c-main-black);
+  --text-color: var(--c-main-black);
+  --text-subtle: var(--c-grey-4);
+  --background-color: var(--c-white);
+  --background-gradient: rgb(255 255 255 / 100%);
+  --button-primary-color: var(--c-white);
+  --button-primary-bg: var(--c-main-black);
+  --button-primary-bg-hover: var(--c-grey-700);
+  --button-primary-bg-active: var(--c-grey-900);
+  --button-secondary-color: var(--text-color);
+  --button-secondary-bg: transparent;
+  --button-secondary-bg-hover: var(--c-grey-50);
+  --button-secondary-bg-active: var(--c-grey-100);
+  --button-secondary-border: var(--c-main-black);
+  --button-tertiary-color: var(--text-color);
+  --button-tertiary-bg-hover: var(--c-grey-50);
+  --button-tertiary-bg-active: var(--c-grey-100);
+  --button-marketing-color: var(--c-white);
+  --button-marketing-bg: var(--c-cta-blue-default);
+  --button-marketing-bg-hover: var(--c-cta-blue-hover);
+  --button-marketing-bg-active: var(--c-cta-blue-active);
+
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.redesign-v2 ul {
+  margin: 0;
+  padding: 0;
+}
+
+.redesign-v2 body,
+.redesign-v2 dl,
+.redesign-v2 ol,
+.redesign-v2 ul,
+.redesign-v2 pre,
+.redesign-v2 blockquote {
+  font-size: var(--f-body-font-size);
+  line-height: var(--f-body-line-height);
+  letter-spacing: var(--f-body-letter-spacing);
+}
+
+.redesign-v2 strong {
+  font-family: var(--ff-volvo-novum-medium);
+  font-weight: 100;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .section {
+  padding: var(--section-padding);
+  background-color: var(--background-color);
+  scroll-margin-top: calc(var(--nav-height) + var(--inpage-navigation-height));
+}
+
+.redesign-v2 .section:last-child {
+  padding-bottom: 24px;
+}
+
+.redesign-v2 .section:first-child,
+.redesign-v2 .section:not(.section--black-background,
+.section--gray-background) + .section:not(.section--black-background, .section--gray-background) {
+  padding-top: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .section > div {
+  padding: var(--section-div-padding);
+  margin: auto;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .modal-content {
+  --section-padding: 0;
+  --section-div-padding-horizontal: 16px;
+  --section-div-padding-vertical: 64px;
+  --section-div-padding: 0 var(--section-div-padding-horizontal) var(--section-div-padding-vertical);
+}
+
+.redesign-v2 .section div.full-width {
+  padding: 0;
+  width: 100%;
+}
+
+.redesign-v2 .modal-content .section div.full-width {
+  margin: -24px 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .modal-content .section--black-background,
+.redesign-v2 .modal-content .section--gray-background,
+.redesign-v2 .modal-content .section--black-background + .section:not(.section--black-background,
+.section--gray-background),
+.redesign-v2 .modal-content .section--gray-background + .section:not(.section--black-background,
+.section--gray-background),
+.redesign-v2 .modal-content .section div.full-width + div {
+  padding-top: var(--section-div-padding-vertical);
+}
+
+:root.redesign-v2 .section .expanded-width {
+  max-width: var(--wrapper-expanded-width);
+  width: 100%;
+}
+
+/* Section Background colors */
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .section--black-background {
+  --media-background: var(--c-grey-900);
+  --text-color: var(--c-white);
+  --card-background: var(--c-grey-900);
+  --card-text: var(--c-white);
+  --c-cta-blue-default: #44a1ff;
+  --text-subtle: var(--c-grey-2);
+  --background-color: var(--c-main-black);
+  --background-gradient: rgb(20 20 20 / 100%);
+  --navigation-line-active-color: var(--c-white);
+
+  color: var(--text-color);
+  padding-top: 80px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .section--gray-background {
+  --text-color: var(--c-main-black);
+  --card-background: var(--c-white);
+  --card-text: var(--c-main-black);
+  --background-color: var(--c-grey-50);
+  --background-gradient: rgb(247 247 247 / 100%);
+}
+
+/* End section Background colors */
+
+.redesign-v2 a.standalone-link {
+  align-items: center;
+  color: var(--c-cta-blue-default);
+  display: inline-flex;
+  font-family: var(--font-family-body);
+  font-size: var(--f-body-font-size);
+  gap: 8px;
+  letter-spacing: var(--f-body-letter-spacing);
+  line-height: var(--f-body-line-height);
+  border-radius: 1px;
+}
+
+.redesign-v2 a.standalone-link:hover {
+  color: var(--c-cta-blue-hover);
+}
+
+.redesign-v2 a.standalone-link:active {
+  color: var(--c-cta-blue-active);
+}
+
+.redesign-v2 a.standalone-link:focus {
+  outline: 0;
+}
+
+.redesign-v2 a.standalone-link:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.redesign-v2 a.button.primary,
+.redesign-v2 button.primary,
+.redesign-v2 a.button.secondary,
+.redesign-v2 button.secondary,
+.redesign-v2 a.button.tertiary,
+.redesign-v2 button.tertiary,
+.redesign-v2 a.button.marketing,
+.redesign-v2 button.marketing {
+  border: 1px solid transparent;
+  align-items: center;
+  border-radius: 4px;
+  display: inline-flex;
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  gap: 8px;
+  justify-content: center;
+  letter-spacing: 1.25px;
+  line-height: 1.4;
+  max-width: 21.5em;
+  height: 48px;
+  padding: 0 32px;
+  text-align: left;
+  text-transform: uppercase;
+  transition: all var(--duration-small) var(--easing-standard);
+  white-space: normal;
+}
+
+.redesign-v2 a.button.primary,
+.redesign-v2 button.primary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-color);
+}
+
+.redesign-v2 a.button.primary:hover,
+.redesign-v2 button.primary:hover {
+  background-color: var(--button-primary-bg-hover);
+}
+
+.redesign-v2 a.button.primary:active,
+.redesign-v2 button.primary:active {
+  background-color: var(--button-primary-bg-active);
+}
+
+.redesign-v2 a.button.secondary,
+.redesign-v2 button.secondary {
+  color: var(--button-secondary-color);
+  background-color: var(--button-secondary-bg);
+  border-color: var(--button-secondary-border);
+}
+
+.redesign-v2 a.button.secondary:hover,
+.redesign-v2 button.secondary:hover {
+  background-color: var(--button-secondary-bg-hover);
+}
+
+.redesign-v2 a.button.secondary:active,
+.redesign-v2 button.secondary:active {
+  background-color: var(--button-secondary-bg-active);
+}
+
+.redesign-v2 a.button.tertiary,
+.redesign-v2 button.tertiary {
+  color: var(--button-tertiary-color);
+  padding: 8px 0;
+  height: 40px;
+}
+
+.redesign-v2 a.button.tertiary:hover,
+.redesign-v2 button.tertiary:hover {
+  background-color: var(--button-tertiary-bg-hover);
+  text-decoration: underline;
+}
+
+.redesign-v2 a.button.tertiary:active,
+.redesign-v2 button.tertiary:active {
+  background-color: var(--button-tertiary-bg-active);
+}
+
+.redesign-v2 a.button.marketing,
+.redesign-v2 button.marketing {
+  background-color: var(--button-marketing-bg);
+  color: var(--button-marketing-color);
+}
+
+.redesign-v2 a.button.marketing:hover,
+.redesign-v2 button.marketing:hover {
+  background-color: var(--button-marketing-bg-hover);
+}
+
+.redesign-v2 a.button.marketing:active,
+.redesign-v2 button.marketing:active {
+  background-color: var(--button-marketing-bg-active);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .section--black-background  a.button,
+.redesign-v2 .section--black-background  button,
+.redesign-v2 a.button.dark,
+.redesign-v2 button.dark {
+  --button-primary-color: var(--c-main-black);
+  --button-primary-bg: var(--c-white);
+  --button-primary-bg-hover: var(--c-grey-200);
+  --button-primary-bg-active: var(--c-grey-400);
+  --button-secondary-color: var(--c-white);
+  --button-secondary-bg-hover: var(--c-grey-900);
+  --button-secondary-bg-active: var(--c-grey-800);
+  --button-secondary-border: var(--c-white);
+  --button-tertiary-color: var(--c-white);
+  --button-tertiary-bg-hover: var(--c-grey-900);
+  --button-tertiary-bg-active: var(--c-grey-800);
+  --button-marketing-color: var(--c-main-black);
+  --button-marketing-bg: var(--c-cta-blue-default);
+  --button-marketing-bg-hover: #76baff;
+  --button-marketing-bg-active: #1f78d1;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.redesign-v2 .section--gray-background  a.button,
+.redesign-v2 .section--gray-background  button {
+  --button-secondary-bg-hover: var(--c-grey-100);
+  --button-secondary-bg-active: var(--c-grey-200);
+  --button-tertiary-bg-hover: var(--c-grey-100);
+  --button-tertiary-bg-active: var(--c-grey-200);
+}
+
+.redesign-v2 :is(h1, h2, h3, h4, h5, h6) a:any-link::after,
+.redesign-v2 a.button::after {
+  display: none;
+}
+
+/* Headings classes styles */
+.redesign-v2 .h1 {
+  font-family: var(--ff-volvo-novum);
+  font-size: var(--f-heading-1-font-size);
+  line-height: var(--f-heading-1-line-height);
+  letter-spacing: var(--f-heading-1-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .h2 {
+  font-family: var(--ff-volvo-novum);
+  font-size: var(--f-heading-2-font-size);
+  line-height: var(--f-heading-2-line-height);
+  letter-spacing: var(--f-heading-2-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .h3 {
+  font-family: var(--ff-volvo-novum);
+  font-size: var(--f-heading-3-font-size);
+  line-height: var(--f-heading-3-line-height);
+  letter-spacing: var(--f-heading-3-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .h4 {
+  font-family: var(--ff-volvo-novum-medium);
+  font-size: var(--f-heading-4-font-size);
+  line-height: var(--f-heading-4-line-height);
+  letter-spacing: var(--f-heading-4-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .h5 {
+  font-family: var(--ff-volvo-novum);
+  font-size: var(--f-heading-5-font-size);
+  line-height: var(--f-heading-5-line-height);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .h6 {
+  font-family: var(--ff-volvo-novum-medium);
+  font-size: var(--f-heading-6-font-size);
+  line-height: var(--f-heading-6-line-height);
+  letter-spacing: var(--f-heading-6-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .subtitle-1 {
+  font-family: var(--ff-volvo-novum-medium);
+  font-size: var(--f-subtitle-1-font-size);
+  line-height: var(--f-subtitle-1-line-height);
+  letter-spacing: var(--f-subtitle-1-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .subtitle-2 {
+  font-family: var(--ff-volvo-novum-medium);
+  font-size: var(--f-subtitle-2-font-size);
+  line-height: var(--f-subtitle-2-line-height);
+  letter-spacing: var(--f-subtitle-2-letter-spacing);
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.redesign-v2 .button .icon svg,
+.redesign-v2 .standalone-link .icon svg {
+  height: 24px;
+  width: 24px;
+}
+
+/* common elements */
+.redesign-v2 div:where([role="dialog"]) label,
+.redesign-v2 main label {
+  color: var(--c-grey-4);
+  font-family: var(--font-family-heading);
+  font-size: var(--f-subtitle-2-font-size);
+  letter-spacing: var(--f-subtitle-2-letter-spacing);
+  line-height: var(--f-subtitle-2-line-height);
+}
+
+.redesign-v2 div:where([role="dialog"]) input,
+.redesign-v2 main input {
+  color: var(--c-grey-4);
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--c-grey-2);
+  font-family: var(--font-family-body);
+  font-size: var(--f-subtitle-2-font-size);
+  letter-spacing: var(--f-subtitle-2-letter-spacing);
+  line-height: var(--f-subtitle-2-line-height);
+}
+
+.redesign-v2 div:where([role="dialog"]) input:hover,
+.redesign-v2 main input:hover {
+  border-color: var(--c-grey-2);
+}
+
+.redesign-v2 div:where([role="dialog"]) input:focus,
+.redesign-v2 main input:focus,
+.redesign-v2 div:where([role="dialog"]) input:focus-visible,
+.redesign-v2 main input:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.redesign-v2 .checkbox-with-label {
+  position: relative;
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox'] {
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  opacity: 1;
+  margin: 0;
+  z-index: -1;
+  appearance: none;
+  border: 0;
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox']:focus,
+.redesign-v2 .checkbox-with-label input[type='checkbox']:focus-visible {
+  outline: none;
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox'] + label {
+  display: flex;
+  gap: 10px;
+  user-select: none;
+  font-size: var(--f-button-font-size);
+  letter-spacing: var(--f-button-letter-spacing);
+  color: var(--text-color);
+  font-family: var(--font-family-body);
+  line-height: 100%;
+  margin: 0;
+  align-items: center;
+
+  --checkbox-margin: 3px;
+  --checkbox-size: 18px;
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox'] + label::before {
+  content: '';
+  display: inline-block;
+  width: var(--checkbox-size);
+  min-width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  min-height: var(--checkbox-size);
+  border: 2px solid var(--border-strong);
+  border-radius: 2px;
+  margin: var(--checkbox-margin);
+  align-self: flex-start;
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox']:checked + label::before {
+  border-color: transparent;
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox']:checked + label {
+  background: url('/icons/checkbox.svg') no-repeat;
+  background-position-x: var(--checkbox-margin);
+  background-position-y: var(--checkbox-margin);
+}
+
+.redesign-v2 .checkbox-with-label input[type='checkbox']:focus + label::before,
+.redesign-v2 .checkbox-with-label input[type='checkbox']:focus-visible + label::before {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 1px;
+}
+
+.redesign-v2 .pretitle {
+  color: var(--text-color);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: var(--f-body-2-font-size);
+  letter-spacing: var(--f-body-2-letter-spacing);
+  line-height: var(--f-body-2-line-height);
+}
+
+/* Global video block styles */
+.video-iframe {
+  width: 100%;
+  border: 0;
+  aspect-ratio: var(--video-aspect-ratio);
+  display: block;
+}
+
+.v2-video__playback-button,
+.v2-video__mute-controls {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 0;
+  padding: 0;
+}
+
+.v2-video__mute-controls {
+  top: 70px;
+}
+
+.v2-video__playback-button .icon-play-video,
+.v2-video__mute-controls .icon-mute {
+  display: none;
+  justify-content: center;
+}
+
+.v2-video__playback-button .icon-pause-video,
+.v2-video__mute-controls .icon-unmute {
+  display: flex;
+  justify-content: center;
+}
+
+.v2-video__playback-button:hover svg circle,
+.v2-video__mute-controls:hover svg circle {
+  fill: var(--c-grey-50);
+}
+
+.v2-video__playback-button .icon,
+.v2-video__mute-controls .icon {
+  height: 100%;
+  align-items: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.v2-video__playback-button .icon svg,
+.v2-video__mute-controls .icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.v2-inpage-navigation {
+  opacity: 0;
+}
+
+.v2-inpage-navigation[data-block-status="loaded"] {
+  opacity: 1;
+}
+
+@media (max-width: 744px) {
+  .v2-content-card__item .v2-video__playback-button,
+  .v2-content-card__item .v2-video__mute-controls {
+    top: 18px !important;
+  }
+}
+
+@media (min-width: 744px) {
+  :root {
+    --carousel-gap: 20px;
+  }
+
+  :root.redesign-v2 {
+    --section-padding: 40px 0 56px;
+    --section-div-padding: 24px 32px;
+    --text-block-max-width: 506px;
+  }
+
+  .redesign-v2 .modal-content {
+    --section-padding: 0;
+    --section-div-padding-horizontal: 32px;
+    --section-div-padding-vertical: 80px;
+  }
+
+  .redesign-v2 .modal-content .section div.full-width {
+    margin: -40px 0 -16px;
+  }
+
+  .v2-video__playback-button,
+  .v2-video__mute-controls {
+    bottom: 18px;
+    top: initial;
+  }
+
+  .v2-video__mute-controls {
+    bottom: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  :root.redesign-v2 {
+    --wrapper-width: 1170px;
+    --wrapper-expanded-width: 1440px;
+    --section-padding: 56px 0 136px;
+    --section-div-padding: 24px 0;
+    --text-block-max-width: 694px;
+  }
+
+  .redesign-v2 .modal-content {
+    --section-padding: 0;
+    --section-div-padding-horizontal: 0;
+    --section-div-padding-vertical: 128px;
+  }
+
+  .redesign-v2 .modal-content .section div.full-width {
+    margin: -80px 0 -48px;
+  }
+
+  :root.redesign-v2 .section .expanded-width {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .redesign-v2 .section div.full-width {
+    margin: 0;
+  }
+
+  .redesign-v2 .pretitle {
+    font-size: var(--f-heading-5-font-size);
+    letter-spacing: var(--f-heading-5-letter-spacing);
+    line-height: var(--f-heading-5-line-height);
+  }
+}
+
+.screenreader {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* generic tooltip styles  starts here */
+.redesign-v2 .tooltip {
+  position: relative;
+}
+
+.redesign-v2 .tooltip::before,
+.redesign-v2 .tooltip::after {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-small) linear, visibility var(--duration-small) linear;
+}
+
+.redesign-v2 .tooltip.show::before,
+.redesign-v2 .tooltip.show::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.redesign-v2 .tooltip::before {
+  content: attr(data-tooltip);
+  z-index: 2;
+  padding: 4px 8px 5px;
+  white-space: nowrap;
+  color: var(--c-main-black);
+  background: var(--c-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 0.3px 0.5px 0 rgb(0 0 0 / 10%);
+}
+
+.redesign-v2 .tooltip::after {
+  content: "";
+  width: 0;
+  height: 0;
+  z-index: 4;
+  filter: drop-shadow(0 6px 4px rgb(0 0 0 / 10%));
+}
+
+/* tooltip position top */
+.redesign-v2 .tooltip--top::before,
+.redesign-v2 .tooltip--top::after {
+  bottom: 60%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-bottom: 15px;
+}
+
+.redesign-v2 .tooltip--top::after {
+  margin-bottom: 8.5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid var(--c-white);
+}
+
+/* tooltip position right */
+.redesign-v2 .tooltip--right::before,
+.redesign-v2 .tooltip--right::after {
+  top: 50%;
+  left: 60%;
+  transform: translate(0, -50%);
+  margin-left: 15px;
+}
+
+.redesign-v2 .tooltip--right::after {
+  margin-left: 8.5px;
+  border-top: 5px solid transparent;
+  border-right: 7px solid var(--c-white);
+  border-bottom: 5px solid transparent;
+}
+
+/* tooltip position left */
+.redesign-v2 .tooltip--left::before,
+.redesign-v2 .tooltip--left::after {
+  top: 50%;
+  right: 60%;
+  transform: translate(0, -50%);
+  margin-right: 15px;
+}
+
+.redesign-v2 .tooltip--left::after {
+  margin-right: 8.5px;
+  border-top: 5px solid transparent;
+  border-left: 7px solid var(--c-white);
+  border-bottom: 5px solid transparent;
+}
+
+/* tooltip position bottom */
+.redesign-v2 .tooltip--bottom::before,
+.redesign-v2 .tooltip--bottom::after {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 15px;
+}
+
+.redesign-v2 .tooltip--bottom::after {
+  margin-top: 8.5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid var(--c-white);
+}
+
+/* generic tooltip styles  ends here */
+
+/* external app styles start */
+
+.external-app header,
+.external-app footer {
+  display: none;
+}
+
+.external-app .v2-iframe-wrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.external-app .section.v2-iframe-container {
+  padding: 0;
+}
+
+/* external app styles end */

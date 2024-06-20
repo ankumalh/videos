@@ -4,26 +4,42 @@
   "version": "1.3.0",
   "description": "Starter project for Adobe Helix",
   "scripts": {
+    "dev": "npx @adobe/helix-cli up",
+    "test": "wtr \"./test/**/*.test.js\" --node-resolve --port=2000 --coverage",
+    "test:watch": "npm test -- --watch",
     "lint:js": "eslint .",
-    "lint:css": "stylelint blocks/**/*.css styles/*.css",
-    "lint": "npm run lint:js && npm run lint:css"
+    "lint:css": "stylelint 'blocks/**/*.css' 'styles/*.css' 'templates/**/*.css'",
+    "lint": "npm run lint:js && npm run lint:css",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint:js",
+    "*.css": "npm run lint:css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adobe/aem-boilerplate.git"
+    "url": "git+https://github.com/adobe/helix-project-boilerplate.git"
   },
   "author": "Adobe",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/adobe/aem-boilerplate/issues"
+    "url": "https://github.com/adobe/helix-project-boilerplate/issues"
   },
-  "homepage": "https://github.com/adobe/aem-boilerplate#readme",
+  "homepage": "https://github.com/adobe/helix-project-boilerplate#readme",
   "devDependencies": {
-    "@babel/eslint-parser": "7.24.7",
-    "eslint": "8.57.0",
+    "@babel/core": "7.24.5",
+    "@babel/eslint-parser": "7.24.5",
+    "@esm-bundle/chai": "4.3.4-fix.0",
+    "@web/test-runner": "0.18.2",
+    "@web/test-runner-commands": "0.9.0",
+    "chai": "5.1.1",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.29.1",
-    "stylelint": "16.6.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2",
+    "sinon": "17.0.1",
+    "stylelint": "16.5.0",
     "stylelint-config-standard": "36.0.0"
   }
 }

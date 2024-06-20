@@ -1,0 +1,328 @@
+{
+  "total": 80,
+  "offset": 0,
+  "limit": 80,
+  "data": [
+    {
+      "Key": "Low resolution video message",
+      "Text": "For a premium high resolution experience, please accept cookies."
+    },
+    {
+      "Key": "Change cookie settings",
+      "Text": "Change cookie settings"
+    },
+    {
+      "Key": "Search For",
+      "Text": "Search For"
+    },
+    {
+      "Key": "no results",
+      "Text": "sorry, your search for $0 returned no results!"
+    },
+    {
+      "Key": "refine",
+      "Text": "let's refine, or try searching by different search keywords instead."
+    },
+    {
+      "Key": "Showing results for",
+      "Text": "Showing <strong>$0 - $1</strong> of <strong>$2</strong> results for <strong>\"$3\"</strong>"
+    },
+    {
+      "Key": "Sort By",
+      "Text": "Sort By"
+    },
+    {
+      "Key": "Sort Filter",
+      "Text": "Relevance,Newest Content,Oldest Content"
+    },
+    {
+      "Key": "Previous",
+      "Text": "Previous"
+    },
+    {
+      "Key": "Next",
+      "Text": "Next"
+    },
+    {
+      "Key": "No search results",
+      "Text": "SORRY, YOUR SEARCH FOR \"{{$0}}\" RETURNED NO RESULTS!"
+    },
+    {
+      "Key": "No search results promp",
+      "Text": "LET'S REFINE, OR TRY SEARCHING BY DIFFERENT SEARCH KEYWORDS INSTEAD."
+    },
+    {
+      "Key": "This is 360° image",
+      "Text": "This is 360° image"
+    },
+    {
+      "Key": "Close menu",
+      "Text": "Close menu"
+    },
+    {
+      "Key": "Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "Open menu",
+      "Text": "Open menu"
+    },
+    {
+      "Key": "Overview",
+      "Text": "Overview"
+    },
+    {
+      "Key": "Please enter valid value",
+      "Text": "Please enter valid value"
+    },
+    {
+      "Key": "no eloqua message",
+      "Text": "We cannot show the content because you have not given us permission to store cookie files"
+    },
+    {
+      "Key": "no eloqua link message",
+      "Text": "Change cookie settings"
+    },
+    {
+      "Key": "vinlabel",
+      "Text": "Enter your 17-digit VIN (Vehicle Identification Number)"
+    },
+    {
+      "Key": "vinformat",
+      "Text": "The VIN entered is not valid for Volvo Trucks, Prevost, Nova Bus, or Volvo Bus vehicles"
+    },
+    {
+      "Key": "result text",
+      "Text": "${count} recalls available for VIN \"${vin}\""
+    },
+    {
+      "Key": "recalls",
+      "Text": "Recalls"
+    },
+    {
+      "Key": "recall_date",
+      "Text": "Issue Date"
+    },
+    {
+      "Key": "recall_description",
+      "Text": "Description"
+    },
+    {
+      "Key": "safety_risk_description",
+      "Text": "Safety Risk"
+    },
+    {
+      "Key": "remedy_description",
+      "Text": "Remedy"
+    },
+    {
+      "Key": "published_info",
+      "Text": "Information last updated"
+    },
+    {
+      "Key": "mfr_recall_status",
+      "Text": "Recall Status"
+    },
+    {
+      "Key": "recall-complete",
+      "Text": "Recall Complete"
+    },
+    {
+      "Key": "recall-incomplete",
+      "Text": "Recall Incomplete"
+    },
+    {
+      "Key": "recall-incomplete-no-remedy",
+      "Text": "Recall Incomplete, remedy not available"
+    },
+    {
+      "Key": "loading recalls",
+      "Text": "Loading recalls"
+    },
+    {
+      "Key": "no recalls",
+      "Text": "No recalls for VIN"
+    },
+    {
+      "Key": "mfr_notes",
+      "Text": "Next Steps"
+    },
+    {
+      "Key": "submit",
+      "Text": "Submit"
+    },
+    {
+      "Key": "mfr_recall_number",
+      "Text": "Brand Recall Number"
+    },
+    {
+      "Key": "nhtsa_recall_number",
+      "Text": "NHTSA Recall Number"
+    },
+    {
+      "Key": "recall_oldest_info",
+      "Text": "Recall information available since:"
+    },
+    {
+      "Key": "tc_recall_nbr",
+      "Text": "Transport Canada Number"
+    },
+    {
+      "Key": "no-french-info",
+      "Text": "L'anglais est affiché là où le français n'est pas disponible."
+    },
+    {
+      "Key": "vinformat-length",
+      "Text": "Please fill out this field"
+    },
+    {
+      "Key": "day",
+      "Text": "day"
+    },
+    {
+      "Key": "hour",
+      "Text": "hour"
+    },
+    {
+      "Key": "minute",
+      "Text": "minute"
+    },
+    {
+      "Key": "second",
+      "Text": "second"
+    },
+    {
+      "Key": "Close",
+      "Text": "Close"
+    },
+    {
+      "Key": "Copied",
+      "Text": "Copied!"
+    },
+    {
+      "Key": "event-notify:first-name",
+      "Text": "First name"
+    },
+    {
+      "Key": "event-notify:last-name",
+      "Text": "Last name"
+    },
+    {
+      "Key": "event-notify:zip",
+      "Text": "Zip or Postal Code"
+    },
+    {
+      "Key": "event-notify:email",
+      "Text": "Email"
+    },
+    {
+      "Key": "event-notify:agreement",
+      "Text": "I agree to receive email updates from Volvo Trucks North America"
+    },
+    {
+      "Key": "event-notify:notify",
+      "Text": "Notify me"
+    },
+    {
+      "Key": "event-notify:add-event",
+      "Text": "Add event to calendar"
+    },
+    {
+      "Key": "view all",
+      "Text": "View all"
+    },
+    {
+      "Key": "toggle list",
+      "Text": "Toggle resources list"
+    },
+    {
+      "Key": "view less",
+      "Text": "View less"
+    },
+    {
+      "Key": "recall_available_info",
+      "Text": "since:"
+    },
+    {
+      "Key": "make",
+      "Text": "Make"
+    },
+    {
+      "Key": "model",
+      "Text": "Model"
+    },
+    {
+      "Key": "model year",
+      "Text": "Model Year"
+    },
+    {
+      "Key": "go to top",
+      "Text": "Go to the top of the page"
+    },
+    {
+      "Key": "single video message title",
+      "Text": "Enable cookies to view the reveal?"
+    },
+    {
+      "Key": "single video message text",
+      "Text": "<p class='cookie-message__text'>Our media viewer uses social media cookies and/or similar technologies set by third-party services, as outlined in our <a href='/cookies/'>Cookie Notice</a>.</p><p class='cookie-message__text'>Use “Accept Cookies” to view the reveal and to agree to the storing of cookies on your device and to our use of cookies, or use “Reject Cookies” to decline to review the reveal.</p>"
+    },
+    {
+      "Key": "single video message button",
+      "Text": "Accept All Cookies"
+    },
+    {
+      "Key": "single video message button deny",
+      "Text": "Reject Cookies"
+    },
+    {
+      "Key": "form-subscribe:email-label",
+      "Text": "Enter your email"
+    },
+    {
+      "Key": "form-subscribe:button-submit",
+      "Text": "Submit"
+    },
+    {
+      "Key": "form-subscribe:success-title",
+      "Text": "You’re all set."
+    },
+    {
+      "Key": "form-subscribe:success-text",
+      "Text": "We’ll be sending you all the latest Volvo info"
+    },
+    {
+      "Key": "form-subscribe:error-title",
+      "Text": "Oops, something went wrong."
+    },
+    {
+      "Key": "form-subscribe:error-text",
+      "Text": "Please <a href=\"https://www.volvotrucks.us/about-volvo/contact-us/\">contact us</a>."
+    },
+    {
+      "Key": "modal:error-title-unknown",
+      "Text": "Oops, something went wrong."
+    },
+    {
+      "Key": "modal:error-text-unknown",
+      "Text": "Something went wrong. Please try again."
+    },
+    {
+      "Key": "modal:error-title-404",
+      "Text": "Oops, something went wrong."
+    },
+    {
+      "Key": "modal:error-text-404",
+      "Text": "Requested content not found."
+    },
+    {
+      "Key": "404-back-link",
+      "Text": "BACK"
+    },
+    {
+      "Key": "readTime",
+      "Text": "read"
+    }
+  ],
+  ":type": "sheet"
+}
