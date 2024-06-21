@@ -175,12 +175,16 @@ function init() {
 
   window.addEventListener('load', () => sampleRUM('load'));
 
-  window.addEventListener('unhandledrejection', (event) => {
-    sampleRUM('error', { source: event.reason.sourceURL, target: event.reason.line });
-  });
-
-  window.addEventListener('error', (event) => {
-    sampleRUM('error', { source: event.filename, target: event.lineno });
+  ['error', 'unhandledrejection'].forEach((event) => {
+    window.addEventListener(event, ({ reason, error }) => {
+      const source = (reason || error).stack
+        .split('\n')
+        .filter((line) => line.match(/https?:\/\//))
+        .shift()
+        .replace(/at ([^ ]+) \((.+)\)/, '$1@$2');
+      const target = (reason || error).toString();
+      sampleRUM('error', { source, target });
+    });
   });
 }
 

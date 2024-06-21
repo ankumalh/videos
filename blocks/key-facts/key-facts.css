@@ -1,0 +1,205 @@
+.key-facts-wrapper {
+  text-align: center;
+}
+
+.key-facts {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.key-facts__row {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  flex-flow: row wrap;
+  gap: 32px 8px;
+  text-align: center;
+}
+
+.key-facts__key-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: calc(50% - 4px);
+  justify-content: center;
+}
+
+.key-facts__key-item p {
+  margin: 0;
+}
+
+.key-facts .key-facts__main-text-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--c-cta-blue-default);
+  width: 100%;
+  font-size: var(--f-heading-3-5-font-size);
+  letter-spacing: var(--f-heading-3-5-letter-spacing);
+  line-height: var(--f-heading-3-5-line-height);
+  text-wrap: balance;
+}
+
+.key-facts .key-facts__main-text-wrapper--small {
+  flex-direction: column;
+  font-size: var(--f-heading-5-font-size);
+  letter-spacing: var(--f-heading-5-letter-spacing);
+  line-height: var(--f-heading-5-line-height);
+}
+
+.key-facts .key-facts__main-text-wrapper--small br {
+  content: '';
+  display: none;
+}
+
+.key-facts__main-text-wrapper .key-facts__main-text {
+  display: flex;
+  font-family: var(--ff-volvo-novum);
+}
+
+.key-facts__main-text + .key-facts__main-text--small::before {
+  content: '\00a0';
+}
+
+.key-facts__main-text--small {
+  font-size: 0.75em;
+}
+
+.key-facts__main-text-wrapper--small .key-facts__main-text--small {
+  width: 100%;
+}
+
+.key-facts__main-text--extra-small {
+  font-size: 0.5em;
+}
+
+.key-facts .key-facts__icon {
+  font-size: 48px;
+  justify-content: center;
+}
+
+.key-facts__trailing-line {
+  display: none;
+}
+
+.key-facts--trailing-line .key-facts__trailing-line {
+  display: block;
+}
+
+.key-facts--trailing-line .key-facts__trailing-line::before {
+  content: ' ';
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  padding-top: 30px;
+  border-top: 3px solid var(--c-grey-1);
+}
+
+.key-facts__row--with-media {
+  position: relative;
+}
+
+.key-facts__image-cell {
+  width: 100%;
+}
+
+.key-facts__image-cell img {
+  border-radius: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.key-facts__video,
+.key-facts__row .embed-video {
+  width: 100%;
+  background-color: var(--media-background);
+  border-radius: var(--border-radius);
+}
+
+@media (min-width: 744px) {
+  .key-facts__row {
+    gap: 48px;
+  }
+
+  .key-facts__key-item {
+    width: 25%;
+  }
+
+  .key-facts--with-media .key-facts__row {
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+
+  .key-facts--with-media .key-facts__key-item {
+    width: 25%;
+  }
+
+  .key-facts__row.key-facts__row--with-media img,
+  .key-facts__row.key-facts__row--with-media video {
+    border-radius: var(--border-radius);
+  }
+}
+
+@media (min-width: 1200px) {
+  .key-facts {
+    align-items: center;
+  }
+
+  .key-facts .key-facts__main-text-wrapper {
+    font-size: var(--f-heading-2-font-size);
+    letter-spacing: var(--f-heading-2-letter-spacing);
+    line-height: var(--f-heading-2-line-height);
+  }
+
+  .key-facts .key-facts__main-text-wrapper--small {
+    font-size: var(--f-heading-3-5-font-size);
+    letter-spacing: var(--f-heading-3-5-letter-spacing);
+    line-height: var(--f-heading-3-5-line-height);
+  }
+
+  .key-facts--with-media {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .key-facts__row {
+    width: 100%;
+    max-width: var(--wrapper-width);
+    gap: unset;
+    justify-content: space-evenly;
+    padding: 0 0 0 24px;
+  }
+
+  .key-facts--with-media .key-facts__row {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    max-width: unset;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .key-facts--with-media .key-facts__row:not(.key-facts__row--with-media) {
+    min-width: 21rem;
+    width: 21rem;
+    align-self: stretch;
+  }
+
+  .key-facts--with-media .key-facts__key-item {
+    width: auto;
+    text-align: left;
+  }
+
+  .key-facts--with-media .key-facts__main-text-wrapper {
+    justify-content: left;
+  }
+
+  .key-facts__row.key-facts__row--with-media img,
+  .key-facts__row.key-facts__row--with-media video {
+    flex-grow: 1;
+    margin: 0;
+  }
+}

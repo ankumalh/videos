@@ -1,0 +1,162 @@
+.v2-media-gallery {
+  --media-gallery-container-margin: 16px;
+  --media-gallery-image-gap: 12px;
+  --media-gallery-next-slide-preview: 22px;
+}
+
+.v2-media-gallery__row {
+  display: flex;
+  flex-direction: column;
+}
+
+.v2-media-gallery__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  padding-bottom: 40px;
+  max-width: var(--text-block-max-width);
+  align-self: center;
+}
+
+.v2-media-gallery__heading {
+  font-family: var(--ff-volvo-novum-medium);
+  font-size: var(--f-heading-4-font-size);
+  letter-spacing: var(--f-heading-4-letter-spacing);
+  line-height: var(--f-heading-4-line-height);
+  margin: 16px 0 8px;
+}
+
+.v2-media-gallery__text {
+  margin: 0 0 16px;
+}
+
+.v2-media-gallery__images-list-col {
+  max-width: unset;
+  padding: 0;
+  margin: 0 calc(var(--media-gallery-container-margin) * -1);
+}
+
+.v2-media-gallery__images-list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  overflow: auto;
+  padding-left: 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0;
+  max-width: 100vw;
+  gap: var(--media-gallery-image-gap);
+}
+
+.v2-media-gallery__images-list::before,
+.v2-media-gallery__images-list::after {
+  content: '';
+  display: block;
+  flex: 0 0 8px;
+  min-height: 1px;
+}
+
+.v2-media-gallery__images-list::-webkit-scrollbar {
+  display: none;
+}
+
+.v2-media-gallery__images-list-item {
+  text-align: left;
+  width: 85%;
+  flex: none;
+  scroll-snap-align: center;
+  font-size: var(--f-overline-font-size);
+  letter-spacing: var(--f-overline-letter-spacing);
+  line-height: var(--f-overline-line-height);
+  max-width: 500px;
+}
+
+.v2-media-gallery__figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--media-gallery-image-gap);
+  margin: 0;
+}
+
+.v2-media-gallery__figure picture {
+  aspect-ratio: 4/3;
+  display: block;
+  background-color: var(--media-background);
+  border-radius: var(--border-radius);
+}
+
+.v2-media-gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+@media screen and (min-width: 744px) {
+  .v2-media-gallery {
+    --media-gallery-container-margin: 32px;
+    --media-gallery-image-gap: 16px;
+    --media-gallery-next-slide-preview: 90px;
+  }
+
+  .v2-media-gallery__heading {
+    margin: 16px 0;
+  }
+
+  .v2-media-gallery__text {
+    margin: 0 0 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .v2-media-gallery {
+    --media-gallery-container-margin: 0px;
+  }
+
+  .v2-media-gallery__row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .v2-media-gallery__col {
+    align-self: flex-start;
+    position: sticky;
+    top: calc(var(--nav-height) + var(--inpage-navigation-height) + 8px);
+    text-align: left;
+    align-items: flex-start;
+    width: 21rem;
+    margin: 0;
+  }
+
+  .v2-media-gallery__images-list-col {
+    width: auto;
+  }
+
+  .v2-media-gallery__images-list {
+    flex-direction: column;
+    gap: 32px;
+    max-width: var(--text-block-max-width);
+  }
+
+  .v2-media-gallery__heading {
+    font-size: var(--f-heading-3-font-size);
+    letter-spacing: var(--f-heading-3-letter-spacing);
+    line-height: var(--f-heading-3-line-height);
+    margin: 16px 0 24px;
+  }
+
+  p.v2-media-gallery__text {
+    margin: 0 0 32px;
+    font-size: var(--f-body-2-font-size);
+    letter-spacing: var(--f-body-2-letter-spacing);
+    line-height: var(--f-body-2-line-height);
+  }
+
+  .v2-media-gallery__images-list-item {
+    max-width: unset;
+    width: var(--text-block-max-width);
+  }
+}

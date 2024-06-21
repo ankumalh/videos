@@ -1,1 +1,239 @@
-/* add global styles that can be loaded post LCP here */
+/* below the fold CSS goes here */
+
+@font-face {
+  font-family: VolvoNovum;
+  src: url('/fonts/VolvoNovum-Regular.woff2') format('woff2'),
+       url('/fonts/volvonovum-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: VolvoNovum-Medium;
+  src: url('/fonts/VolvoNovum-Medium.woff2') format('woff2'),
+       url('/fonts/VolvoNovum-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: VolvoBroadProDigital;
+  src: url('/fonts/VolvoBroadProDigital.woff2') format('woff2'),
+       url('/fonts/volvobroadprodigital.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: fontawesome;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fontawesome-webfont.woff') format('woff');
+}
+
+body.disable-scroll, body.disable-scroll main {
+  overflow: hidden;
+}
+
+.semitrans {
+  visibility: hidden;
+  z-index: 1051;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  opacity: 0;
+  background-color: #7F7F7F;
+  transition: visibility .2s, opacity .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.semitrans-trigger[aria-expanded='true']~.semitrans {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+/*!
+ *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+.fa {
+  font: normal normal normal 14px/1 var(--ff-fontawesome);
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0,0)
+}
+
+.fa-angle-right::before {
+  content: "\f105";
+}
+
+.fa-angle-left::before {
+  content: "\f104";
+}
+
+.fa-angle-up::before {
+  content: "\f106"
+}
+
+.fa-search::before {
+  content: "\f002"
+}
+
+.fa-plug::before {
+  content: "\f1e6"
+}
+
+.fa-facebook-f::before,.fa-facebook::before {
+  content: "\f09a"
+}
+
+.fa-bold::before {
+  content: "\f032"
+}
+
+.fa-engine-power::before {
+  content: "\e60c"
+}
+
+.fa-play::before {
+  content: "\f04b"
+}
+
+.fa-play-circle-o::before {
+  content: "\f01d"
+}
+
+.fa-youtube::before {
+  content: "\f167"
+}
+
+.fa-linkedin::before {
+  content: "\f0e1"
+}
+
+.fa-instagram::before {
+  content: "\f16d"
+}
+
+.fa-twitter::before {
+  content: "\f099"
+}
+
+.fa-bolt::before,.fa-flash::before {
+  content: "\f0e7"
+}
+
+.fa-plus::before {
+  content: "\f067"
+}
+
+.fa-info-circle::before {
+  content: "\f05a"
+}
+
+.fa-close::before,.fa-remove::before,.fa-times::before {
+  content: "\f00d"
+}
+
+.fa-star::before {
+  content: "\f005"
+}
+
+.fa-star-o::before {
+  content: "\f006"
+}
+
+.fa-cut::before,.fa-scissors::before {
+  content: "\f0c4"
+}
+
+.fa-copy::before,.fa-files-o::before {
+  content: "\f0c5"
+}
+
+.fa-external-link::before {
+  content: "\f08e"
+}
+
+.fa-refresh::before {
+  content: "\f021"
+}
+
+.fa-user::before {
+  content: "\f007"
+}
+
+.fa-clock-o::before {
+  content: "\f017";
+}
+
+.fa-calendar::before {
+  content: "\f073"
+}
+
+.fa-envelope::before {
+  content: "\f0e0"
+}
+
+.fa-caret-left::before {
+  content: "\f0d9"
+}
+
+.fa-caret-right::before {
+  content: "\f0da"
+}
+
+.fa-truck::before {
+  content: "\f0d1"
+}
+
+.fa-dashboard::before {
+  content: "\f0e4"
+}
+
+.fa-cog::before {
+  content: "\f013"
+}
+
+.fa-check::before {
+  content: "\f00c"
+}
+
+/* The injected widget should be customized in the SDK UI by an administrator.
+   see https://my.onetrust.com/articles/en_US/Knowledge/UUID-8a1fff4c-95c6-be5f-4369-228aa86283c6
+   Just overriding the bare minimum to make it readable: */
+.cookies #ot-sdk-cookie-policy .ot-sdk-container {
+  font-size: var(--body-font-size-s) !important;
+}
+
+.cookies h1 {
+  font-family: var(--ff-volvo-broadprodigital);
+  font-size: 6rem;
+}
+
+.cookies h3 {
+  font-family: var(--ff-volvo-novum-medium);
+  font-size: var(--heading-font-size-s);
+}
+
+.body-dealer-locator footer.footer-wrapper{
+  display: none;
+}
+
+.body-dealer-locator main .section {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .body-dealer-locator main .section {
+    padding: 0;
+    margin: 0;
+  }
+}
