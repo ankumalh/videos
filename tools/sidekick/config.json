@@ -3,25 +3,6 @@
   "host": "https://main--videos--ankumalh.hlx.page/",
   "plugins": [
     {
-      "id": "tagger",
-      "title": "Tagger",
-      "environments": [ "edit" ],
-      "url": "/tools/tagger/index.html"
-    },
-    {
-      "id": "library",
-      "title": "Library",
-      "environments": [ "edit" ],
-      "url": "/tools/sidekick/library.html",
-      "includePaths": [ "**.docx**" ]
-    },
-    {
-      "id": "fgrep",
-      "title": "Search",
-      "environments": [ "dev", "preview", "live", "prod" ],
-      "url": "/tools/fgrep-attr/fgrep.html"
-    },
-    {
       "id": "asset-library",
       "title": "My Assets",
       "environments": [
